@@ -5,6 +5,7 @@
 #include <time.h>
 #include <unordered_set>
 using namespace std;
+// The Right Way (do this in hello_world.cpp): use <algorithm> and `std::ranges::sample` to rand pick a card from a 'sequence'
 
 int drawCard(unordered_multiset<int> & fullDeck);
 

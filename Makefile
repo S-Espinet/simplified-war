@@ -1,10 +1,10 @@
-all: hello_world
+all: simplified_war
 
-hello_world: hello_world.cpp
-	g++ -std=c++20 hello_world.cpp -o hello_world
+hello_world: simplified_war.cpp
+	g++ -std=c++20 simplified_war.cpp -o simplified_war
 
-#hello_world: hello_world.cpp
+#simplified_war: simplified_war.cpp
 #	g++ $@.cpp -o $@
 
 clean:
-	rm hello_world
+	rm simplified_war
