@@ -1,10 +1,7 @@
-all: simplified_war
+all: simplified_war_class.out
 
-hello_world: simplified_war.cpp
-	g++ -std=c++20 simplified_war.cpp -o simplified_war
-
-#simplified_war: simplified_war.cpp
-#	g++ $@.cpp -o $@
+simplified_war_class.out: simplified_war_class.cpp
+	g++ -std=c++20 simplified_war_class.cpp -o simplified_war_class.out
 
 clean:
-	rm simplified_war
+	rm simplified_war_class.out

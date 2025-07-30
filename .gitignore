@@ -1,4 +1,3 @@
 .vscode
-hello_world
 *.dSYM
-simplified_war
+*.out
