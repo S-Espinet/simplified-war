@@ -10,6 +10,7 @@ class Deck {
   const int numOfCardTypes = 13;
   int deckCount = 52;
   int *counts;
+//constructor:
 public:
   Deck();
   int getDeckCount();
@@ -28,12 +29,10 @@ class LinkedCardList {
   WarNode *root = NULL;
   //create node after node that points to null (tail)/append:
   void addNode();
-  //remove node based on rank (once numOfCard = 0)
+  //remove node based on rank (once numOfCard = 0):
+  void removeNode(int rank);
   //decrement numOfCard based on node rank
 };
-
-//write code to create a node using a loop
-//include a check if rank != 13, current node points to next node
 
 int main() {
   //random seed - for rand function:
@@ -107,5 +106,34 @@ void LinkedCardList::addNode() {
     }
     endNode = new WarNode();
     endNode->rank = rankCount + 1;
+  }
+}
+
+void LinkedCardList::removeNode(int rank) {
+  //if the linked list is empty:
+  if (root == NULL) {
+    return;
+  }
+  
+  WarNode *currentNode = root;
+  WarNode *previousNode = NULL;
+  while (currentNode->rank != rank) {
+    //find desired rank
+    previousNode = currentNode;
+    currentNode = currentNode->nextNode;
+    //if we didn't find rank
+    if (currentNode == NULL) {
+      return;
+    }
+  }
+  //we've found rank
+  //if root is the node I want to remove:
+  if (previousNode == NULL) {
+    root = currentNode->nextNode;
+    delete currentNode;
+  }
+  else {
+    previousNode->nextNode = currentNode->nextNode;
+    delete currentNode;
   }
 }
